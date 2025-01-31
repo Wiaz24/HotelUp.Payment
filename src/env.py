@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     RABBITMQ_USER: str
     RABBITMQ_PASSWORD: str
     STRIPE_API_KEY: str
+    STRIPE_WEBHOOK_SECRET: str
     class Config:
         env_file = None if os.getenv('HOSTING_ENVIRONMENT') == 'Production' else '.env'
 
