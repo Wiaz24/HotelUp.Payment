@@ -20,11 +20,11 @@ ENV PYTHONPATH=/app/src
 ENV PYTHONDONTWRITEBYTECODE=1
 
 # Expose port
-EXPOSE 5002
+EXPOSE 5007
 
 # Health check
 HEALTHCHECK --interval=10s --timeout=10s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:5001/api/payment/health || exit 1
+    CMD curl -f http://localhost:5007/api/payment/health || exit 1
 
 # Command to run the application
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5002", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5007", "--reload"]
